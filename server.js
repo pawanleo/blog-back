@@ -1,11 +1,15 @@
-const app = require('./app')
-const mongoose = require('mongoose')
-const PORT = process.env.PORT
-const DB  = process.env.MONGO_URL
+require('dotenv').config(); //looking for .env file in your root folder
+const mongoose=require('mongoose');
+const app =require('./app');
 
-mongoose.connect(DB).then(data=>{
-    console.log("DB Connected !!")
-    app.listen(PORT,()=>{
-        console.log(`Server listening to port ${PORT}`)
+
+mongoose.connect(process.env.MONGO_URL).then(data=>{
+
+    console.log("connected to db");
+
+    app.listen(process.env.PORT,()=>{
+        console.log("server running")
     })
+}).catch(err=>{
+    console.log(err)
 })

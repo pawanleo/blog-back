@@ -1,3 +1,3 @@
-exports.centralErrorHandler = async (err, req, res, next) => {
-  res.json({ message: "Error Occures", error: err.message });
-};
+exports.centralErrorHandler=(err,req,res,next,)=>{
+    res.json({message:"error occured",data:err.message})
+}

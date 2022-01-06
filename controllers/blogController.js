@@ -43,10 +43,17 @@ console.log('==',req.body)
 
 exports.deletePost = async (req,res)=>{
 
+    // try {
+    //     const data = await blog.deleteOne({_id:req.params.id})
+    //     res.json({message:'Post Deleted !!',data:data})
+    // } catch (error) {
+    //     throw new Error(error)
+    // }
     try {
-        const data = await blog.deleteOne({_id:req.params.id})
-        res.json({message:'Post Deleted !!',data:data})
-    } catch (error) {
-        throw new Error(error)
-    }
+        const data = await blog.deleteOne({ _id: req.body._id });
+    
+        res.json({ message: "data delete", data: data });
+      } catch (error) {
+        console.log(error);
+      }
 }

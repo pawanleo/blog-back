@@ -1,5 +1,5 @@
 const authentication = require("../models/authenticationModel");
-const { createJwt } = require("../utils/auth");
+const { createJwt } = require("../utlis/auth");
 
 exports.showUser = async (req, res) => {
   try {
